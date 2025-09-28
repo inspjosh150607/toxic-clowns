@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toxic Clowns Society</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: black;
+      color: lime;
+      scroll-behavior: smooth;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: rgba(0,0,0,0.8);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    header img {
+      max-height: 60px;
+    }
+    .menu-toggle {
+      font-size: 2rem;
+      cursor: pointer;
+      color: lime;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      padding-top: 80px;
+      transition: 0.3s;
+      z-index: 999;
+    }
+    nav a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: lime;
+      font-weight: bold;
+      border-bottom: 1px solid #111;
+    }
+    nav a:hover {
+      background: lime;
+      color: black;
+    }
+    .section {
+      padding: 100px 20px;
+      min-height: 100vh;
+      text-align: center;
+    }
+    form {
+      max-width: 500px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+    }
+    form label {
+      font-size: 1rem;
+    }
+    form input, form button {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+    form input {
+      background: #111;
+      color: lime;
+    }
+    form button {
+      background: lime;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: white;
+    }
+    footer {
+      padding: 20px;
+      background: #111;
+      text-align: center;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="https://i.ibb.co/TDcchMty/your-image.png" alt="Toxic Clowns Logo">
+    <span class="menu-toggle">⋮</span>
+  </header>
+
+  <!-- Side Navigation -->
+  <nav id="sideMenu">
+    <a href="#home">🏠 Home</a>
+    <a href="#about">ℹ️ About</a>
+    <a href="#rules">📜 Rules</a>
+    <a href="#gallery">🖼 Gallery</a>
+    <a href="#contact">📞 Contact</a>
+    <a href="https://toxic-clowns.netlify.app/" target="_blank">🔥 Join Guild</a>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home" class="section">
+    <h1>Welcome to Toxic Clowns Society 🎭</h1>
+    <p>League of Slayers – Join our elite Free Fire guild!</p>
+    
+    <!-- Join Form -->
+    <form name="join-form" method="POST" data-netlify="true" enctype="multipart/form-data" action="thank-you.html">
+      <input type="hidden" name="form-name" value="join-form">
+      <input type="hidden" name="email" value="inspjosh@gmail.com">
+
+      <label>What's your In-Game Name?</label>
+      <input type="text" name="ign" required>
+
+      <label>What's your UID?</label>
+      <input type="text" name="uid" required>
+
+      <label>What's your Game Level?</label>
+      <input type="number" name="level" required>
+
+      <label>What's your CS Rank?</label>
+      <input type="text" name="cs-rank" required>
+
+      <label>What's your BR Rank?</label>
+      <input type="text" name="br-rank" required>
+
+      <label>What's your CS KDA?</label>
+      <input type="text" name="cs-kda" required>
+
+      <label>What's your BR KDA?</label>
+      <input type="text" name="br-kda" required>
+
+      <label>Upload your Free Fire Profile</label>
+      <input type="file" name="profile" accept="image/*" required>
+
+      <button type="submit">🎯 Submit Application</button>
+    </form>
+  </section>
+
+  <section id="about" class="section">
+    <h1>About Us</h1>
+    <p>We are Toxic Clowns Society – a guild of elite Free Fire players. 
+       Our mission is to dominate tournaments, train hard, and grow stronger together.</p>
+  </section>
+
+  <section id="rules" class="section">
+    <h1>Guild Rules</h1>
+    <ul style="list-style:none; padding:0; font-size:1.2rem;">
+      <li>✅ Always respect teammates</li>
+      <li>✅ Active players only (no inactivity)</li>
+      <li>✅ Good device & strong internet required</li>
+      <li>✅ Play fair – no cheats or toxicity</li>
+    </ul>
+  </section>
+
+  <section id="gallery" class="section">
+    <h1>Gallery</h1>
+    <p>Screenshots & highlights of our squad will be displayed here.</p>
+    <img src="https://i.ibb.co/TDcchMty/your-image.png" alt="Guild Highlight" style="max-width:250px; border:2px solid lime; border-radius:10px;">
+  </section>
+
+  <section id="contact" class="section">
+    <h1>Contact Us</h1>
+    <p>💬 WhatsApp: <a href="https://wa.me/+2349023371564" target="_blank" style="color:lime;">Chat with us</a></p>
+    <p>🎮 Discord: <span style="color:lime;">@inspjosh</span></p>
+    <p>📧 Email: <a href="mailto:inspjosh@gmail.com" style="color:lime;">inspjosh@gmail.com</a></p>
+
+    <!-- Contact Form -->
+    <form name="contact-form" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact-form">
+
+      <label>Your Name</label>
+      <input type="text" name="name" required>
+
+      <label>Your Message</label>
+      <input type="text" name="message" required>
+
+      <button type="submit">📨 Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    Toxic Clowns Society © 2025 | Built for Gamers 🎮
+  </footer>
+
+  <!-- JavaScript for Menu -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sideMenu = document.getElementById('sideMenu');
+    let menuOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+      if (!menuOpen) {
+        sideMenu.style.right = "0";
+        menuOpen = true;
+      } else {
+        sideMenu.style.right = "-250px";
+        menuOpen = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
