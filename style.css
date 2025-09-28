@@ -1,0 +1,101 @@
+/* General Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Orbitron', sans-serif; }
+body { background: black; color: white; display: flex; }
+
+/* Blood Fog */
+.bloodfog {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at 20% 30%, rgba(255,0,0,0.25), transparent 70%),
+              radial-gradient(circle at 80% 40%, rgba(200,0,0,0.25), transparent 70%),
+              radial-gradient(circle at 40% 70%, rgba(255,30,30,0.2), transparent 70%);
+  background-size: 200% 200%;
+  animation: bloodMove 20s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+@keyframes bloodMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px; background: rgba(20,20,20,0.9);
+  padding: 20px; height: 100vh;
+  position: fixed; top: 0; left: 0; z-index: 2;
+  text-align: center;
+}
+.sidebar img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  animation: glowPulse 2s infinite;
+}
+@keyframes glowPulse {
+  0%,100% { box-shadow: 0 0 10px red; }
+  50% { box-shadow: 0 0 30px red; }
+}
+.sidebar ul { list-style: none; margin-top: 20px; }
+.sidebar li { margin: 15px 0; }
+.sidebar a {
+  color: #f44; text-decoration: none; font-size: 18px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+.sidebar a:hover { color: white; text-shadow: 0 0 10px red; }
+#soundToggle {
+  margin-top: 20px; padding: 8px; background: #222; border: none;
+  color: white; cursor: pointer; border-radius: 8px;
+}
+#soundToggle:hover { background: red; }
+
+/* Main Content */
+.main {
+  margin-left: 240px;
+  padding: 40px;
+  flex: 1;
+  z-index: 2;
+}
+section {
+  margin: 60px 0;
+  opacity: 0; transform: translateY(30px);
+  transition: all 1s ease;
+}
+section.visible { opacity: 1; transform: translateY(0); }
+
+/* Typewriter */
+.typewriter {
+  overflow: hidden; border-right: 2px solid red;
+  white-space: nowrap; animation: typing 4s steps(40,end), blink .8s infinite;
+}
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink { 50% { border-color: transparent } }
+
+/* Glitch Effect */
+.glitch { position: relative; color: red; font-size: 30px; }
+.glitch::before, .glitch::after {
+  content: attr(class); position: absolute; left: 0;
+  text-shadow: -2px 0 cyan, 2px 0 lime;
+  animation: glitch 1s infinite;
+}
+@keyframes glitch {
+  0% { clip-path: inset(0 0 80% 0); }
+  50% { clip-path: inset(20% 0 40% 0); }
+  100% { clip-path: inset(60% 0 0 0); }
+}
+
+/* Buttons */
+button {
+  margin: 10px 5px; padding: 10px 15px;
+  border: none; border-radius: 6px;
+  background: darkred; color: white; font-weight: bold;
+  cursor: pointer; transition: transform 0.2s, background 0.3s;
+}
+button:hover { transform: scale(1.1); background: #ff4444; }
+
+/* Forms */
+form { display: flex; flex-direction: column; }
+label { margin: 8px 0; }
+input { padding: 6px; margin-top: 3px; border-radius: 4px; border: none; }
